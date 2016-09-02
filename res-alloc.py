@@ -3,6 +3,7 @@ from configs import instances, cpu_dict, hours, price, min_capacity
 
 #method to calculate min cost and elements selected and it returns a list
 def MinKnapsack(value, weight, W, N):
+	#K is a (W+1)x(N+1) array in which minimum cost for each server is saved along with the items included
 	K = [[[0,[]] for x in range(W+1)] for x in range(N+1)]
 	for i in range(N+1):
 		for w in range(W+1):
@@ -41,9 +42,9 @@ def get_costs(instances, hours, cpus, price):
 		#calculate occurance of each server in result 
 		count_dict = collections.Counter(result[1])
 		
-		for ki in count_dict.keys():
+		for x in count_dict.keys():
 			for k,v in cpu_dict.iteritems():
-				if(ki == v):
+				if(x == v):
 					count_keys.append(k)
 		count_values = [value for value in count_dict.values()]
 		

@@ -1,3 +1,4 @@
+#define all requirements in this file
 min_capacity = 83
 
 hours = 2
